@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <!-- Incluir el CSS de Bootstrap -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-   
+
 <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -88,8 +89,8 @@
 </style>
 
 <body>
- 
-{{-- iconos de bootstrap --}}
+
+    {{-- iconos de bootstrap --}}
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="bootstrap" viewBox="0 0 118 94">
             <title>Bootstrap</title>
@@ -121,98 +122,96 @@
                 d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
         </symbol>
     </svg>
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/"
+                        class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
 
-        <header>
-            <div class="px-3 py-2 text-bg-dark border-bottom">
-                <div class="container">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                                <use xlink:href="#bootstrap" />
-                            </svg>
-                        </a>
-        
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-secondary">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#home" />
-                                    </svg>
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Usuarios
-                                </a>
-                            </li>
-                         
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#grid" />
-                                    </svg>
-                                    Rutas
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#table" />
-                                    </svg>
-                                    Reservas
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#grid" />
-                                    </svg>
-                                    Tours
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#speedometer2" />
-                                    </svg>
-                                    Informes
-                                    <i class="bi bi-people"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#table" />
-                                    </svg>
-                                    Rendiciones
-                                </a>
-                            </li>
-                         
-                        </ul>
-                    </div>
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="#" class="nav-link text-secondary">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#home" />
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#people-circle" />
+                                </svg>
+                                Usuarios
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#grid" />
+                                </svg>
+                                Rutas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#table" />
+                                </svg>
+                                Reservas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#grid" />
+                                </svg>
+                                Tours
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#speedometer2" />
+                                </svg>
+                                Informes
+                                <i class="bi bi-people"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#table" />
+                                </svg>
+                                Rendiciones
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
-            <div class="px-3 py-2 border-bottom mb-3">
-                <div class="container d-flex flex-wrap justify-content-center">
-                    <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-                        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                    </form>
-        
-                    <div class="text-end">
-                        <button type="button" class="btn btn-light text-dark me-2">Login</button>
-                        <button type="button" class="btn btn-primary">Sign-up</button>
-                    </div>
+        </div>
+        <div class="px-3 py-2 border-bottom mb-3">
+            <div class="container d-flex flex-wrap justify-content-center">
+                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-light text-dark me-2">Login</button>
+                    <button type="button" class="btn btn-primary">Sign-up</button>
                 </div>
             </div>
-        </header>
-        
-        <div class="b-example-divider"></div>
+        </div>
+    </header>
 
-        <div class="b-example-divider b-example-vr"></div>
+    <div class="b-example-divider"></div>
 
 
 
@@ -220,4 +219,5 @@
     <!-- Incluir el JS de Bootstrap -->
     @vite('resources/js/app.js')
 </body>
+
 </html>
