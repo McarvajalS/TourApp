@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour App - MPV</title>
+    <!--Saludos-->
     <!-- Incluir el CSS de Bootstrap -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
