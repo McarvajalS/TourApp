@@ -6,6 +6,7 @@
     <title>Tour App - MPV</title>
     <!--Saludos-->
     <!--que tal-->
+    <!--prueba-->
     <!-- Incluir el CSS de Bootstrap -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
