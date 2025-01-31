@@ -1,0 +1,272 @@
+/* Estilos para el color celeste */
+.celeste {
+    background-color: #0198bf;
+    border-radius: 25px;
+    width: 150px;
+}
+
+/* Estilos para el color verde */
+.verde {
+    background-color: #668c2e;
+}
+
+/* Estilos para el color lila */
+.lila {
+    background-color: #6b4089;
+    border-radius: 25px;
+ 
+}
+
+/* Estilos para el color naranja */
+.naranja {
+    background-color: #f38a1b;
+    border-radius: 25px;
+       
+   }
+
+/* Estilos para el color rojo */
+.rojo {
+    background-color: #d41d21;
+    border-radius: 25px;
+}
+
+/* Estilos para el color negro */
+.negro {
+    background-color: #000000;
+}
+
+/* Estilos para los enlaces de paginación */
+.page-link {
+    background-color: #668c2e;
+}
+
+/* Estilos para la barra de color */
+.colorBarra {
+    background-color: #e3f2fd;
+}
+
+/* Estilos para las filas de la tabla */
+tr {
+    border-bottom: 1px solid #dee2e6;
+    /* Color del borde */
+}
+
+/* Estilos para los títulos h2 */
+h2 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilos para el tamaño de fuente 20 */
+.font20 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* Estilos para el tamaño de fuente 18 */
+.font18 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+
+
+/* BotonesApp */
+.btn-eliminar {
+    background-image: url('/tourApp/resources/imagenes/eliminar.png');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    text-indent: -9999px;
+    /* Oculta el texto del botón */
+    width: 40px;
+    /* Ajusta el ancho de tu imagen */
+    height: 40px;
+    /* Ajusta la altura de tu imagen */
+    border: none;
+    /* Elimina el borde del botón */
+    background-color: transparent;
+    /* Establece el fondo transparente */
+}
+
+.btn-editar {
+    /* background-image: url('/img/imagen.jpg'); */
+    background-image: url('ajuste.png');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    text-indent: -9999px;
+    /* Oculta el texto del botón */
+    width: 40px;
+    /* Ajusta el ancho de tu imagen */
+    height: 40px;
+    /* Ajusta la altura de tu imagen */
+    border: none;
+    /* Elimina el borde del botón */
+    background-color: transparent;
+    /* Establece el fondo transparente */
+}
+
+.btn-password {
+    background-image: url('password.png');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    text-indent: -9999px;
+    /* Oculta el texto del botón */
+    width: 40px;
+    /* Ajusta el ancho de tu imagen */
+    height: 40px;
+    /* Ajusta la altura de tu imagen */
+    border: none;
+    /* Elimina el borde del botón */
+    background-color: transparent;
+    /* Establece el fondo transparente */
+}
+
+.btn-enviado {
+    background-image: url('enviado.png');
+
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    text-indent: -9999px;
+    /* Oculta el texto del botón */
+    width: 40px;
+    /* Ajusta el ancho de tu imagen */
+    height: 40px;
+    /* Ajusta la altura de tu imagen */
+    border: none;
+    /* Elimina el borde del botón */
+    background-color: transparent;
+    /* Establece el fondo transparente */
+}
+
+
+.btn-eliminar:hover,
+.btn-editar:hover,
+.btn-cerrar:hover,
+.btn-guardar:hover,
+.btn-password:hover,
+.btn-enviado:hover {
+    transform: scale(1.3);
+    /* Cambia el tamaño del botón al pasar el mouse */
+    /* Puedes agregar otros estilos de hover aquí */
+}
+
+
+
+.btn-guardar {
+    background-image: url('/tourApp/resources/imagenes/guardar.png');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    text-indent: -9999px;
+    /* Oculta el texto del botón */
+    width: 60px;
+    /* Ajusta el ancho de tu imagen */
+    height: 60px;
+    /* Ajusta la altura de tu imagen */
+    border: none;
+    /* Elimina el borde del botón */
+    background-color: transparent;
+    /* Establece el fondo transparente */
+}
+
+.btn-cerrar {
+    background-image: url('/tourApp/public/css/cancelar.png');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    text-indent: -9999px;
+    /* Oculta el texto del botón */
+    width: 60px;
+    /* Ajusta el ancho de tu imagen */
+    height: 60px;
+    /* Ajusta la altura de tu imagen */
+    border: none;
+    /* Elimina el borde del botón */
+    background-color: transparent;
+    /* Establece el fondo transparente */
+}
+
+
+/* CSS MODALES */
+
+.modal-content {
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #f38a1b;
+    border-bottom: none;
+}
+
+.header-login {
+    background-color: #f38a1b;
+    color: #fff;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.modal-title {
+    color: #fff;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+/* Estilo para las etiquetas */
+.form-group label {
+    margin-bottom: 4px;
+    /* Añade un poco de espacio debajo de cada etiqueta */
+    display: block;
+    /* Asegura que cada etiqueta esté en una línea separada */
+}
+
+/* Estilo para los campos de formulario */
+.form-control {
+    border-radius: 20px;
+    /* Hace que los campos de formulario sean más redondeados */
+}
+
+/* Estilos para redondear el div principal */
+.card {
+    border-radius: 20px;
+}
+
+/* Estilos para redondear el encabezado */
+.header-login {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Estilos para redondear los labels */
+.form-label {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.botonLogin {
+    width: 200px;
+    margin-right: 0px;
+
+    background-color: #668c2e;
+    border-radius: 25px;
+}

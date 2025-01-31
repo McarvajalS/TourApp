@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour App - MPV</title>
     <!-- Incluir el CSS de Bootstrap -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/tour-app.css','resources/js/app.js'])
 </head>
 
 <style>
@@ -197,7 +197,7 @@
                 </div>
             </div>
         </div>
-        <div class="px-3 py-2 border-bottom mb-3">
+        {{-- <div class="px-3 py-2 border-bottom mb-3">
             <div class="container d-flex flex-wrap justify-content-center">
                 <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
@@ -208,13 +208,12 @@
                     <button type="button" class="btn btn-primary">Sign-up</button>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </header>
 
     <div class="b-example-divider"></div>
 
-
-
+    {{-- @yield('contenido') --}}
 
     <!-- Incluir el JS de Bootstrap -->
     @vite('resources/js/app.js')
