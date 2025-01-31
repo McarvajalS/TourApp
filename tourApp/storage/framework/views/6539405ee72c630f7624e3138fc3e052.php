@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\Proyecto TourApp\TourApp\tourApp\resources\views/layouts/app.blade.php ENDPATH**/ ?>
