@@ -59,11 +59,11 @@ h2 {
 }
 
 /* Estilos para el tamaño de fuente 20 */
-.font20 {
+.font25 {
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /* Estilos para el tamaño de fuente 18 */
@@ -75,10 +75,14 @@ h2 {
 }
 
 
+.icono-navbar {
+    font-size: 2em;
+}
+
 
 /* BotonesApp */
 .btn-eliminar {
-    background-image: url('/tourApp/resources/imagenes/eliminar.png');
+    background-image: url('eliminar.png');
     background-size: cover;
     /* Ajusta el tamaño de la imagen */
     background-repeat: no-repeat;
@@ -166,16 +170,16 @@ h2 {
 
 
 .btn-guardar {
-    background-image: url('/tourApp/resources/imagenes/guardar.png');
+    background-image: url('guardar.png');
     background-size: cover;
     /* Ajusta el tamaño de la imagen */
     background-repeat: no-repeat;
     /* Evita la repetición de la imagen */
     text-indent: -9999px;
     /* Oculta el texto del botón */
-    width: 60px;
+    width: 50px;
     /* Ajusta el ancho de tu imagen */
-    height: 60px;
+    height: 50px;
     /* Ajusta la altura de tu imagen */
     border: none;
     /* Elimina el borde del botón */
@@ -184,7 +188,7 @@ h2 {
 }
 
 .btn-cerrar {
-    background-image: url('/tourApp/public/css/cancelar.png');
+    background-image: url('cancelar.png');
     background-size: cover;
     /* Ajusta el tamaño de la imagen */
     background-repeat: no-repeat;
