@@ -1,0 +1,23 @@
+/* Asegúrate de que no haya reglas de estilo que causen que los botones desaparezcan al pasar el cursor */
+.btn:hover {
+    /* Ajusta el estilo del hover si es necesario */
+    opacity: 0.8; /* Ejemplo: Cambiar la opacidad en lugar de ocultar el botón */
+    /* Puedes ajustar otros estilos aquí según sea necesario */
+}
+
+.rojo {
+    background-color: red;
+}
+
+.naranja {
+    background-color: orange;
+}
+
+.lila {
+    background-color: purple;
+}
+
+/* Asegúrate de que no haya reglas que oculten los botones al pasar el cursor */
+.btn:hover {
+    display: block; /* Asegúrate de que los botones se mantengan visibles */
+}
