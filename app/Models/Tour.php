@@ -14,6 +14,11 @@ class Tour extends Model
     //protected $keyType="string"; //solo se pone cuando la clave primaria no es entero.
     public $timestamps=false;
 
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class,"id_tour");
+    }
+
     public function depositos()
     {
         return $this->belongsTo(Deposito::class,"id_deposito");
@@ -22,5 +27,10 @@ class Tour extends Model
     public function usuarios()
     {
         return $this->belongsTo(Usuario::class,"id_guia");
+    }
+
+    public function rutas()
+    {
+        return $this->belongsTo(Ruta::class,"id_rutas");
     }
 }

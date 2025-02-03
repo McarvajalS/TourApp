@@ -14,11 +14,6 @@ class Usuario extends Model
     //protected $keyType="string"; //solo se pone cuando la clave primaria no es entero.
     public $timestamps=false;
 
-    public function roles()
-    {
-        return $this->belongsTo(Rol::class,"id_rol");
-    }
-
     public function disponibilidades()
     {
         return $this->hasMany(Disponibilidad::class,"id_guia");
@@ -27,5 +22,15 @@ class Usuario extends Model
     public function tours()
     {
         return $this->hasMany(Tour::class,"id_guia");
+    }
+
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class,"id_turista");
+    }
+
+    public function roles()
+    {
+        return $this->belongsTo(Rol::class,"id_rol");
     }
 }
