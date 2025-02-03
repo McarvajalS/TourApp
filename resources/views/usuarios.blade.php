@@ -1,9 +1,9 @@
 @extends('layouts.navbar')
-
+@section('title', 'Usuarios - TourApp')
 @section('contenido')
 
    <div class="container mt-5 mb-5">
-    <h1 class="mt-5 mb-5 d-flex justify-content-end">USUARIOS</h1>
+    <h1 class="mt-5 mb-5 me-3 d-flex justify-content-end">USUARIOS</h1>
         <div class="d-flex justify-content-start">
             <a href="" class="btn rojo text-white mx-2" data-bs-toggle="modal" data-bs-target="#ModalCrearUsuario">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo Usuario
@@ -225,8 +225,6 @@
 
 @endsection
 
-
-<html>
-</html>
+<div></div>
 
 

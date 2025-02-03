@@ -1,10 +1,10 @@
 @extends('layouts.navbar1')
-
+@section('title', 'Tours - TourApp')
 @section('contenido')
 
   
     <div class="container">
-         <h1 class="mt-5 mb-5 d-flex justify-content-end">TOURS</h1>
+         <h1 class="mt-5 mb-5 me-3 d-flex justify-content-end">TOURS</h1>
     </div>
     <div>
 
