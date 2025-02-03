@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rol;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class RolController extends Controller
 {

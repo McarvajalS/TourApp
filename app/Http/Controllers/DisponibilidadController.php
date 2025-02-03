@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Disponibilidad;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class DisponibilidadController extends Controller
 {

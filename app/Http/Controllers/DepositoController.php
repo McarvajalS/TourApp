@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Deposito;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class DepositoController extends Controller
 {

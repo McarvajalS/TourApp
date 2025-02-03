@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
+use App\Clases\Utilidad;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class UsuarioController extends Controller
 {
