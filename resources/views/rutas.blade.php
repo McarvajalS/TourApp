@@ -1,8 +1,8 @@
 @extends('layouts.navbar')
-
+@section('title', 'Rutas - TourApp')
 @section('contenido')
      <div class="container mt-5 mb-5">
-         <h1 class="mt-5 mb-5 d-flex justify-content-end">RUTAS</h1>
+         <h1 class="mt-5 mb-5 me-3 d-flex justify-content-end">RUTAS</h1>
         <div class="d-flex justify-content-start">
             <a href="" class="btn rojo text-white mx-2" data-bs-toggle="modal" data-bs-target="#ModalCrearRuta">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Nueva ruta
@@ -108,10 +108,7 @@
                                     <label for="estado">Estado</label>
                                     <input type="text" class="form-control" id="estado" name="estado" required>
                                 </div>
-                                <div class="modal-footer mt-4">
-                                    <button type="submit" title="Guardar cambios" class="btn-guardar">Guardar</button>
-                                </div>
-                            
+                               
                             </form>
 
                             <div class="modal-footer mt-4">
