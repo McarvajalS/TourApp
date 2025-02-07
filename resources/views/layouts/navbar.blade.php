@@ -47,7 +47,7 @@
                             </a>
                         </li>    
                           <li>
-                            <a href="{{ url('usuarios') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                            <a href="{{url('usuarios')}}" class="nav-link text-white d-flex flex-column align-items-center">
                                 <i class="bi bi-people icono-navbar "></i>
                                 <span>Usuarios</span>
                             </a>

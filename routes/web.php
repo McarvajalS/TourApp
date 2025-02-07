@@ -6,16 +6,11 @@ use App\Http\Controllers\UsuarioController;
 Route::resource("usuarios",UsuarioController::class);
 
 Route::get('/', function () {
-    return view('usuarios');
+    return view('index');
 });
-
 
 Route::get('/reservas', function () {
     return view('reservas');
-});
-
-Route::get('/usuarios', function () {
-    return view('usuarios');
 });
 
 Route::get('/rutas', function () {

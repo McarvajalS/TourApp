@@ -14,7 +14,12 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios=Usuario::paginate(5);
+        /*echo "<pre>";
+        print_r($usuarios);
+        echo "</pre>";*/
+        $response=view("usuarios",compact("usuarios"));
+        return $response;
     }
 
     /**
