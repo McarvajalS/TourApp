@@ -27,7 +27,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $response=view("crear_usuario");
+        return $response;
     }
 
     /**
@@ -35,7 +36,40 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Recuperar los datos del formulario
+        $nombre=$request->input("Nombre");
+        $apellido=$request->input("Apellido");
+        $email=$request->input("Email");
+        $telefono=$request->input("Telefono");
+        $contrasenia=$request->input("Contrasenia");
+        $rol=$request->input("Rol");
+
+        //Crear un objeto de la clase que representa una consulta a la tabla
+        $usuario=new Usuario();
+        //Asignar los valores del formulario a su respectivo campo
+        $usuario->nombre=$nombre;
+        $usuario->apellido=$apellido;
+        $usuario->email=$email;
+        $usuario->telefono=$telefono;
+        $usuario->contrasenia=\bcrypt($contrasenia);
+        $usuario->id_rol=$rol;
+
+        try
+        {
+            //Hacer el insert en la tabla
+            $usuario->save();
+            $request->session()->flash("mensaje","Usuario agregado correctamente.");
+            $response=redirect()->action([UsuarioController::class,"index"]);
+        }
+        catch(QueryException $ex)
+        {
+            $mensaje=Utilidad::errorMessage($ex);
+            $request->session()->flash("error",$mensaje);
+            $response=redirect()->action([UsuarioController::class,"create"])->withInput();
+        }
+        
+
+        return $response;
     }
 
     /**
@@ -51,7 +85,8 @@ class UsuarioController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        //
+        $response=view("editar_usuario",compact("usuario"));
+        return $response;
     }
 
     /**
@@ -59,14 +94,63 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+        //Recuperar los datos del formulario
+        $nombre=$request->input("Nombre");
+        $apellido=$request->input("Apellido");
+        $email=$request->input("Email");
+        $telefono=$request->input("Telefono");
+        $rol=$request->input("Rol");
+        
+        //Asignar los valores del formulario a su respectivo campo
+        $usuario->nombre=$nombre;
+        $usuario->apellido=$apellido;
+        $usuario->email=$email;
+        $usuario->telefono=$telefono;
+        $usuario->id_rol=$rol;
+        
+        try
+        {
+            //Hacer el insert en la tabla
+            $usuario->save();
+            $request->session()->flash("mensaje","Usuario actualizado correctamente.");
+            $response=redirect()->action([UsuarioController::class,"index"]);
+            
+        }
+        catch(QueryException $ex)
+        {
+            $mensaje=Utilidad::errorMessage($ex);
+            $request->session()->flash("error",$mensaje);
+            $response=redirect()->action([UsuarioController::class,"edit"],["usuario"=>$usuario])->withInput();
+        }
+        
+        
+        return $response;
+        
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(Request $request, Usuario $usuario)
     {
-        //
+        try
+        {
+            $usuario->delete();
+            $request->session()->flash("mensaje","Usuario borrado correctamente.");
+        }
+        catch(QueryException $ex)
+        {
+            $mensaje=Utilidad::errorMessage($ex);
+            if($mensaje==="Registro con elementos relacionados")
+            {
+                $request->merge(['tipoDeModificacion'=>"ponerInactivo"]);
+                app(UsuarioController::class)->update($request,$usuario);
+            }
+            else
+            {
+                $request->session()->flash("error",$mensaje);
+            }
+        }
+        return redirect()->action([UsuarioController::class,"index"]);
     }
 }

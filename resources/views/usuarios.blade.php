@@ -1,29 +1,27 @@
 @extends('layouts.navbar')
-    @section('title', 'Usuarios - TourApp')
+    @section("title")
+        Mostrar usuarios
+    @endsection
     @section('contenido')
-
+        @php
+            /*echo "<pre>";
+            print_r($usuarios);
+            echo "</pre>";*/
+        @endphp
         @include("partials.mensajes")
 
         <div class="container mt-5 mb-5">
 
             <h1 class="mt-5 mb-5 me-3 d-flex justify-content-end">USUARIOS</h1>
 
-            <div class="d-flex justify-content-start">
-                <a href="" class="btn rojo text-white mx-2" data-bs-toggle="modal" data-bs-target="#ModalCrearUsuario">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo Usuario
-                </a>
-                <a href="" class="btn naranja text-white  mx-2" data-bs-toggle="modal"
-                    data-bs-target="#ModalEditarUsuario">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Editar Usuario
-                </a>
-                <a href="" class="btn lila text-white  mx-2" data-bs-toggle="modal" data-bs-target="#modalBorrado">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Confirmacion Borrar Usuario
-                </a>
-            </div>
+            <a href="{{url("usuarios/create")}}" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>
+                Nuevo usuario
+            </a>
 
             <!-- Tabla de usuarios -->
                 
-            <div class="table-responsive">
+            <div class="table-responsive text-center">
                 <table class="mt-5 table table-info colorBarra">
                     <thead class="colorBarra">
                         <tr>
@@ -32,45 +30,36 @@
                             <th scope="col">Apellido</th>
                             <th scope="col">Email</th>
                             <th scope="col">Telefono</th>
-                            <th scope="col">Tipo de Usuario</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Borrar</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Password</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Comisión</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($usuarios as $usuario)
                             <tr>
                                 <td>
-                                    {{$usuario->id}}
+                                    {{$usuario->id_usuario}}
                                 </td>
                                 <td>
-                                    {{$usuario->nom_usuari}}
+                                    {{$usuario->nombre}}
                                 </td>
                                 <td>
-                                    {{$usuario->contrasenya}}
+                                    {{$usuario->apellido}}
                                 </td>
                                 <td>
-                                    {{$usuario->correu}}
+                                    {{$usuario->email}}
                                 </td>
                                 <td>
-                                    {{$usuario->nom}}
+                                    {{$usuario->telefono}}
                                 </td>
                                 <td>
-                                    {{$usuario->cognom}}
+                                    @if($usuario->id_rol===1) {{"Administrador"}} @elseif($usuario->id_rol===2) {{"Supervisor"}}@elseif($usuario->id_rol===3) {{"Guia"}} @else {{"Turista"}} @endif
                                 </td>
                                 <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="actiu{{$usuario->nom}}" name="actiu{{$usuario->nom}}" value="actiu" @if ($usuario->actiu === 1) @checked(true) @endif @disabled(true)>
-                                        <label class="form-check-label" for="actiu{{$usuario->nom}}"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    @if($usuario->tipus_usuaris_id===1) {{"Administrador"}} @elseif($usuario->tipus_usuaris_id===2) {{"Profesor"}} @else {{"Alumno"}} @endif
+                                    {{$usuario->comision}}
                                 </td>
                                 <td style="display:flex;">
-                                    <form class="me-1" action="{{action([App\Http\Controllers\UsuarioController::class,'destroy'],['usuario'=>$usuario->id])}}" method="POST">
+                                    <form class="me-1" action="{{action([App\Http\Controllers\UsuarioController::class,'destroy'],['usuario'=>$usuario->id_usuario])}}" method="POST">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-sm btn-danger">
@@ -78,13 +67,13 @@
                                             Borrar
                                         </button>
                                     </form>
-                                    <form class="me-1" action="{{action([App\Http\Controllers\UsuarioController::class,'edit'],['usuario'=>$usuario->id])}}" method="GET">
+                                    <form class="me-1" action="{{action([App\Http\Controllers\UsuarioController::class,'edit'],['usuario'=>$usuario->id_usuario])}}" method="GET">
                                         <button type="submit" class="btn btn-sm btn-secondary">
                                             <i class="bi bi-pencil-square"></i>
                                             Editar
                                         </button>
                                     </form>
-                                    <form action="{{action([App\Http\Controllers\UsuarioController::class,'edit'],['usuario'=>$usuario->id,'tipoDeModificacion'=>'cambiarContrasenia'])}}" method="POST">
+                                    <form action="{{action([App\Http\Controllers\UsuarioController::class,'edit'],['usuario'=>$usuario->id_usuario,'tipoDeModificacion'=>'cambiarContrasenia'])}}" method="POST">
                                         @method('GET')
                                         <button type="submit" class="btn btn-sm btn-warning">
                                             <i class="bi bi-key-fill"></i>
@@ -97,9 +86,9 @@
                     </tbody>
                 </table>
                 {{$usuarios->links()}}
-            </div>
-            
+            </div>  
         </div>
+        
 
         <div>
 
@@ -283,4 +272,3 @@
         </div>
 
     @endsection
-    <div></div>
