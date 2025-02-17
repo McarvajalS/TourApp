@@ -3,11 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 
-Route::resource("usuarios",UsuarioController::class);
-
 Route::get('/', function () {
     return view('index');
 });
+
+Route::resource("usuarios",UsuarioController::class);
+
+Route::post("editContrasenia",[UsuarioController::class,"editContrasenia"]);
+
+Route::post("updateContrasenia",[UsuarioController::class,"updateContrasenia"]);
 
 Route::get('/reservas', function () {
     return view('reservas');

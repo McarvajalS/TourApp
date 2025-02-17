@@ -9,6 +9,45 @@ use Illuminate\Database\QueryException;
 
 class UsuarioController extends Controller
 {
+    public function editContrasenia(Request $request)
+    {
+        $idUsuario=$request->id_usuario;
+        $usuario=Usuario::find($idUsuario);
+        $response=view("cambiar_contrasenia",compact("usuario"));
+        return $response;
+    }
+
+    public function updateContrasenia(Request $request)
+    {
+        $idUsuario=$request->id_usuario;
+        $usuario=Usuario::find($idUsuario);
+
+        //Recuperar los datos del formulario
+        $contrasenia=$request->input("Contrasenia");
+
+        //Asignar los valores del formulario a su respectivo campo
+        $usuario->contrasenia=\bcrypt($contrasenia);
+
+        try
+        {
+            //Hacer el insert en la tabla
+            $usuario->save();
+            $request->session()->flash("mensaje","Usuario actualizado correctamente.");
+            $response=redirect()->action([UsuarioController::class,"index"]);
+            
+        }
+        catch(QueryException $ex)
+        {
+            $mensaje=Utilidad::errorMessage($ex);
+            $request->session()->flash("error",$mensaje);
+            $response=redirect()->action([UsuarioController::class,"edit"],["usuario"=>$usuario])->withInput();
+        }
+        
+        
+        return $response;
+
+    }
+
     /**
      * Display a listing of the resource.
      */

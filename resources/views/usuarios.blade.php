@@ -73,13 +73,19 @@
                                             Editar
                                         </button>
                                     </form>
-                                    <form action="{{action([App\Http\Controllers\UsuarioController::class,'edit'],['usuario'=>$usuario->id_usuario,'tipoDeModificacion'=>'cambiarContrasenia'])}}" method="POST">
-                                        @method('GET')
+                                    <form action="{{action([App\Http\Controllers\UsuarioController::class,'editContrasenia'],['id_usuario'=>$usuario->id_usuario])}}" method="POST">
+                                        @csrf
                                         <button type="submit" class="btn btn-sm btn-warning">
                                             <i class="bi bi-key-fill"></i>
                                             Cambiar contraseña
                                         </button>
                                     </form>
+                                    <!--<a href="{{url('cambiarContrasenia')}}">
+                                        <button type="button" class="btn btn-sm btn-warning">
+                                            <i class="bi bi-key-fill"></i>
+                                            Cambiar contraseña
+                                        </button>
+                                    </a>-->
                                 </td>
                             </tr>
                         @endforeach
