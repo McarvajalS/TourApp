@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <!-- Incluir el CSS de Bootstrap -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-   
+
 <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -88,8 +89,8 @@
 </style>
 
 <body>
- 
-{{-- iconos de bootstrap --}}
+
+    {{-- iconos de bootstrap --}}
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="bootstrap" viewBox="0 0 118 94">
             <title>Bootstrap</title>
@@ -122,97 +123,98 @@
         </symbol>
     </svg>
 
-        <header>
-            <div class="px-3 py-2 text-bg-dark border-bottom">
-                <div class="container">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                                <use xlink:href="#bootstrap" />
-                            </svg>
-                        </a>
-        
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-secondary">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#home" />
-                                    </svg>
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#people-circle" />
-                                    </svg>
-                                    Usuarios
-                                </a>
-                            </li>
-                         
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#grid" />
-                                    </svg>
-                                    Rutas
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#table" />
-                                    </svg>
-                                    Reservas
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#grid" />
-                                    </svg>
-                                    Tours
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#speedometer2" />
-                                    </svg>
-                                    Informes
-                                    <i class="bi bi-people"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="20" height="20">
-                                        <use xlink:href="#table" />
-                                    </svg>
-                                    Rendiciones
-                                </a>
-                            </li>
-                         
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="px-3 py-2 border-bottom mb-3">
-                <div class="container d-flex flex-wrap justify-content-center">
-                    <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-                        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                    </form>
-        
-                    <div class="text-end">
-                        <button type="button" class="btn btn-light text-dark me-2">Login</button>
-                        <button type="button" class="btn btn-primary">Sign-up</button>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-        <div class="b-example-divider"></div>
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/"
+                        class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
 
-        <div class="b-example-divider b-example-vr"></div>
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="#" class="nav-link text-secondary">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#home" />
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#people-circle" />
+                                </svg>
+                                Usuarios
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#grid" />
+                                </svg>
+                                Rutas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#table" />
+                                </svg>
+                                Reservas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#grid" />
+                                </svg>
+                                Tours
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#speedometer2" />
+                                </svg>
+                                Informes
+                                <i class="bi bi-people"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20">
+                                    <use xlink:href="#table" />
+                                </svg>
+                                Rendiciones
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="px-3 py-2 border-bottom mb-3">
+            <div class="container d-flex flex-wrap justify-content-center">
+                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-light text-dark me-2">Login</button>
+                    <button type="button" class="btn btn-primary">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="b-example-divider"></div>
+
+    <div class="b-example-divider b-example-vr"></div>
 
 
 
@@ -220,4 +222,22 @@
     <!-- Incluir el JS de Bootstrap -->
     @vite('resources/js/app.js')
 </body>
+
 </html>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h4 class="text-center"><strong>STYLE 1</strong></h4>
+            <hr>
+            <div class="profile-card-2"><img
+                    src="https://previews.123rf.com/images/rglinsky/rglinsky1201/rglinsky120100188/12336990-vertical-de-la-imagen-orientada-a-la-famosa-torre-eiffel-en-par%C3%ADs-francia.jpg"
+                    class="img img-responsive">
+                <div class="profile-name">JOHN DOE</div>
+                <div class="profile-username">@johndoesurname</div>
+                <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                            class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+            </div>
+        </div>

@@ -10,8 +10,7 @@ class Usuario extends Model
     use HasFactory;
     protected $table="Usuarios";
     protected $primaryKey="id_usuario"; //solo se pone cuando la clave primaria no se llama id.
-    //public $incrementing=false; //solo se pone cuando la clave primaria no es autoincremental.
-    //protected $keyType="string"; //solo se pone cuando la clave primaria no es entero.
+
     public $timestamps=false;
 
     public function disponibilidades()
