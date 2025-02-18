@@ -32,9 +32,9 @@
             }
 
             .table thead th {
-                background-color: #e3f2fd;
+                background-color: #98b7b8;
                 /* Color de fondo para el encabezado */
-                color: gray;
+                color: white;
                 /* Color del texto en el encabezado */
                 text-align: right;
                 /* Centrar el texto en el encabezado */
@@ -64,16 +64,12 @@
                     onclick="esconderTabla()">
                 </a>
             </div>
-            {{-- <div class="ms-auto">
+            <div class="ms-auto">
 
-                <a href="javascript:void(0);" class=" btn btn-danger me-2  " onclick="esconderContenedor()"> Crear Tour
-                </a>
-                <a href="javascript:void(0);" class=" btn btn-success me-2 " onclick="esconderContenedor()"> Unir a Tour
-                </a>
-            </div> --}}
+            </div>
         </div>
 
-
+        <a href="http://"></a>
         <div class="container mt-5 mb-5">
             <!-- Tabla de Reservas para Asignar -->
             <div class="col-12 table-responsive">
@@ -86,16 +82,16 @@
                         <thead class="table-light">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">FECHA</th>
-                                <th scope="col">NOMBRE</th>
-                                <th scope="col">TELEFONO</th>
-                                <th scope="col">PAX</th>
-                                <th scope="col">RUTA</th>
-                                <th scope="col">HORARIO</th>
-                                <th scope="col">IDIOMA</th>
-                                <th scope="col">ESTADO</th>
-                                <th scope="col">PLATAFORMA</th>
-                                <th scope="col">EDICION</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Pax</th>
+                                <th scope="col">Ruta</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Idioma</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Plataforma</th>
+                                <th scope="col">Edicion</th>
                                 {{-- <th scope="col">ASIGNAR</th> --}}
                                 <th> <input type="checkbox" id="checkAll"></th> {{-- Seleccionar todas --}}
                             </tr>
@@ -129,25 +125,23 @@
                                     </td>
                                     <td>{{ $nueva_reserva->estado }}</td>
                                     <td>{{ $nueva_reserva->plataforma }}</td>
-                                    <td class="d-flex align-items-end">
-                                        <div class="d-flex justify-content-end">
-                                            <a href="#" class="btn btn-warning mb-1 me-3 icono-tabla"
-                                                data-bs-toggle="modal" data-bs-target="#ModalEditarReserva"
-                                                data-bs-whatever="{{ $nueva_reserva->id_reserva }}|{{ $nueva_reserva->nombre_turista }}|{{ $nueva_reserva->telefono }}|{{ $nueva_reserva->email }}|{{ $nueva_reserva->cantidad_personas }}|{{ $nueva_reserva->plataforma }}|{{ $nueva_reserva->id_ruta_horario_idioma }}|{{ $nueva_reserva->estado }}|{{ $nueva_reserva->fecha }}">
-                                                <i class="bi-pencil-square" aria-hidden="true"></i>
-                                            </a>
+                                  <td class="d-flex justify-content-end align-items-end">
+                                    <a href="#" class="btn btn-outline-warning mb-1 me-3 icono-tabla"
+                                        data-bs-toggle="modal" data-bs-target="#ModalEditarReserva"
+                                        data-bs-whatever="{{ $nueva_reserva->id_reserva }}|{{ $nueva_reserva->nombre_turista }}|{{ $nueva_reserva->telefono }}|{{ $nueva_reserva->email }}|{{ $nueva_reserva->cantidad_personas }}|{{ $nueva_reserva->plataforma }}|{{ $nueva_reserva->id_ruta_horario_idioma }}|{{ $nueva_reserva->estado }}|{{ $nueva_reserva->fecha }}">
+                                        <i class="bi-pencil-square" aria-hidden="true"></i>
+                                    </a>
+                                    <form class="mb-1 me-3"
+                                        action="{{ action([App\Http\Controllers\ReservaController::class, 'destroy'], ['reserva' => $nueva_reserva->id_reserva]) }}"
+                                        method="POST" onsubmit="return confirmarBorrado(event)">
+                                        @csrf
+                                        @method('POST')
+                                        <button type="submit"
+                                            class="bi bi-trash btn btn-outline-danger icono-tabla"></button>
+                                    </form>
+                                </td>
 
-                                            {{-- form boton para borrar reserva --}}
-                                            {{-- <form class="mb-1 me-3"
-                                                action="{{ action([App\Http\Controllers\ReservaController::class, 'destroy'], ['reserva' => $nueva_reserva->id_reserva]) }}"
-                                                method="POST" onsubmit="return confirmarBorrado(event)">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" title=""
-                                                    class="bi bi-trash btn btn-secondary icono-tabla"></button>
-                                            </form> --}}
-                                        </div>
-                                    </td>
+
 
                                     <td><input type="checkbox" name="reservas[]" value="{{ $nueva_reserva->id_reserva }}">
                                     </td>
@@ -178,65 +172,29 @@
             });
         </script>
 
-        <!-- No permite crear Tour si las rutas/idiomas/horarios son diferentes -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const checkboxes = document.querySelectorAll('input[name="reservas[]"]');
-                const form = document.querySelector('form');
-
-                form.addEventListener("submit", function(event) {
-                    let rutaHorarioIdiomaSet = new Set();
-
-                    checkboxes.forEach(checkbox => {
-                        if (checkbox.checked) {
-                            let fila = checkbox.closest("tr");
-                            let rutaHorarioIdioma = fila.cells[5].textContent.trim() + "|" +
-                                fila.cells[6].textContent.trim() + "|" +
-                                fila.cells[7].textContent.trim();
-                            rutaHorarioIdiomaSet.add(rutaHorarioIdioma);
-                        }
-                    });
-
-                    if (rutaHorarioIdiomaSet.size > 1) {
-                        event.preventDefault(); // Evita que se envíe el formulario
-
-                        Swal.fire({
-                            title: "⚠️ Atención",
-                            text: "No puedes agrupar reservas con diferentes rutas, horarios o idiomas.",
-                            // icon: "warning",
-                            confirmButtonColor: "#6C757D",
-                            confirmButtonText: "Entendido"
-                        });
-
-                    }
-                });
-            });
-        </script>
-
-
-
 
 
         <div class="container mt-5 mb-5" id="CargarTablaReservasEditadas" style="display: none;">
             <!-- Tabla de Reservas con estados distintos a estado asignar -->
             <div class="col-12 table-responsive">
-                <table id="reservasTableHistorial" class="mt-5 table table-hover">
+                <table class="mt-5 table table-hover">
                     <h1>HISTORIAL RESERVAS</h1>
                     <thead class="table-light">
                         <tr>
+                           
                             <th scope="col">ID</th>
-                            <th scope="col">FECHA</th>
-                            <th scope="col">NOMBRE</th>
-                            <th scope="col">TELEFONO</th>
-                            <th scope="col">PAX</th>
-                            <th scope="col">RUTA</th>
-                            <th scope="col">HORARIO</th>
-                            <th scope="col">IDIOMA</th>
-                            <th scope="col">TOUR</th>
-                            <th scope="col">ESTADO</th>
-                            <th scope="col">LISTA</th>
-                            <th scope="col">PLATAFORMA</th>
-                            <th scope="col">EDICION</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Pax</th>
+                            <th scope="col">Ruta</th>
+                            <th scope="col">Horario</th>
+                            <th scope="col">Idioma</th>
+                            <th scope="col">Tour</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Asistencia</th>
+                            <th scope="col">Plataforma</th>
+                            <th scope="col">Edicion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -286,41 +244,22 @@
                                     @endif
                                 </td>
                                 <td>{{ $reserva->plataforma }}</td>
-                                <td class="d-flex align-items-end">
-                                    <div class="d-flex">
-                                        <a href="#" class="btn btn-warning mb-1 me-3 icono-tabla"
+                               <td class="d-flex justify-content-end align-items-end">
+                                    <div>
+                                        <a href="#" class="btn btn-outline-danger mb-1 me-3 icono-tabla"
                                             data-bs-toggle="modal" data-bs-target="#ModalEditarReserva"
                                             data-bs-whatever="{{ $reserva->id_reserva }}|{{ $reserva->nombre_turista }}|{{ $reserva->telefono }}|{{ $reserva->email }}|{{ $reserva->cantidad_personas }}|{{ $reserva->plataforma }}|{{ $reserva->id_ruta_horario_idioma }}|{{ $reserva->estado }}|{{ $reserva->fecha }}">
                                             <i class="bi-pencil-square" aria-hidden="true"></i>
                                         </a>
-
                                     </div>
                                 </td>
+
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-
-            <script>
-                $(document).ready(function() {
-                    $('#reservasTableHistorial').DataTable({
-                        "paging": true, // Activar la paginación
-                        "searching": true, // Activar la búsqueda
-                        "ordering": true, // Activar el ordenamiento
-                        "order": [
-                            [0, 'asc']
-                        ], // Ordenar por la primera columna (ID Ruta Horario Idioma)
-                        "language": {
-                            "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
-                        },
-                        "dom": '<"top"f>rt<"bottom"lp><"clear">',
-                        "pageLength": 25 // Número de filas por página
-                    });
-                });
-            </script>
         </div>
-
     </div>
 
     <!-- Modales -->

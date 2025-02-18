@@ -21,62 +21,65 @@
     <header>
         <div class="px-3 py-2 text-bg-dark border-bottom">
             <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/"
-                        class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                            <use xlink:href="#bootstrap" />
-                        </svg>
-                    </a>
-
-                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-
-                         <li>
-                            <a href="#" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-house icono-navbar "></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>    
-                          <li>
-                            <a href="{{ url('usuarios') }}" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-people icono-navbar "></i>
-                                <span>Usuarios</span>
-                            </a>
-                        </li>   
-                        <li>
-                            <a href="{{ url('rutas') }}" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-sign-turn-right icono-navbar "></i>
-                                <span>Rutas</span>
-                            </a>
-                        </li>   
-
-                   
-                         <li>
-                            <a href="{{ url('reservas') }}" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-chat-square-text icono-navbar "></i>
-                                <span>Reservas</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('tours') }}" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-bookmark-star icono-navbar "></i>
-                                <span>Tours</span>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="#" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-cash-coin icono-navbar "></i>
-                                <span>Rendiciones</span>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="#" class="nav-link text-white d-flex flex-column align-items-center">
-                                <i class="bi bi-file-earmark-bar-graph icono-navbar "></i>
-                                <span>Informes</span>
-                            </a>
-                        </li>
-                        
-                    </ul>
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                          <img src="{{ asset('img/logo_app.png') }}" alt="Logo" width="50" height="auto"> 
+                          
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                            <li>
+                                <a href="#" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-house icono-navbar "></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>    
+                            <li>
+                                <a href="{{ url('usuarios') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-people icono-navbar "></i>
+                                    <span>Usuarios</span>
+                                </a>
+                            </li>   
+                            <li>
+                                <a href="{{ url('rutas') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-sign-turn-right icono-navbar "></i>
+                                    <span>Rutas</span>
+                                </a>
+                            </li>   
+                            <li>
+                                <a href="{{ url('reservas') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-chat-square-text icono-navbar "></i>
+                                    <span>Reservas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('tour') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-bookmark-star icono-navbar "></i>
+                                    <span>Tours</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-cash-coin icono-navbar "></i>
+                                    <span>Rendiciones</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-file-earmark-bar-graph icono-navbar "></i>
+                                    <span>Informes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('login') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                                    <i class="bi bi-box-arrow-in-right icono-navbar "></i>
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
