@@ -55,7 +55,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ url('tours') }}" class="nav-link text-white d-flex flex-column align-items-center">
+                                <a href="{{ url('tour') }}" class="nav-link text-white d-flex flex-column align-items-center">
                                     <i class="bi bi-bookmark-star icono-navbar "></i>
                                     <span>Tours</span>
                                 </a>

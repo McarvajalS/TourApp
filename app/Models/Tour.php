@@ -47,6 +47,12 @@ class Tour extends Model
     {
         return $this->belongsTo(Deposito::class, 'id_deposito', 'id_deposito');
     }
+
+    public function totalPax()
+    {
+        return $this->reservas()->sum('cantidad_personas');
+    }
+
 }
 
 
