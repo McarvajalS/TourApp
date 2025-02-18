@@ -1,4 +1,4 @@
-@extends('layouts.navbar1')
+@extends('layouts.navbar')
 @section('title', 'Tours - TourApp')
 @section('contenido')
 
@@ -7,7 +7,6 @@
          <h1 class="mt-5 mb-5 me-3 d-flex justify-content-end">TOURS</h1>
     </div>
     <div>
-
           <!-- Tabla de usuarios -->
         
         {{-- <div class="table-responsive">

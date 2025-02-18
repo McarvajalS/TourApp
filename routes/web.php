@@ -1,26 +1,30 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RutaController;
+use App\Http\Controllers\TourController;
+use App\Http\Controllers\IdiomaController;
+use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\UsuarioController;
+
+Route::resource("usuarios",UsuarioController::class);
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::resource("usuarios",UsuarioController::class);
-
-Route::post("editContrasenia",[UsuarioController::class,"editContrasenia"]);
-
-Route::post("updateContrasenia",[UsuarioController::class,"updateContrasenia"]);
 
 Route::get('/reservas', function () {
     return view('reservas');
 });
 
-Route::get('/rutas', function () {
-    return view('rutas');
+Route::get('/usuarios', function () {
+    return view('usuarios');
 });
 
-Route::get('/tours', function () {
-    return view('tours');
+
+
+Route::get('/login', function () {
+    return view('login');
 });
