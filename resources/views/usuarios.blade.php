@@ -73,19 +73,19 @@
                                             Editar
                                         </button>
                                     </form>
-                                    <form action="{{action([App\Http\Controllers\UsuarioController::class,'editContrasenia'],['id_usuario'=>$usuario->id_usuario])}}" method="POST">
+                                    <form action="{{action([App\Http\Controllers\UsuarioController::class,'editContrasenia'])}}" method="POST">
                                         @csrf
+                                        <div hidden>
+                                            <label for="idUsuario{{$usuario->id_usuario}}">
+                                                Id Usuario
+                                            </label>
+                                            <input type="text" id="idUsuario{{$usuario->id_usuario}}" name="IdUsuario" value="{{$usuario->id_usuario}}"/>
+                                        </div>
                                         <button type="submit" class="btn btn-sm btn-warning">
                                             <i class="bi bi-key-fill"></i>
                                             Cambiar contraseña
                                         </button>
                                     </form>
-                                    <!--<a href="{{url('cambiarContrasenia')}}">
-                                        <button type="button" class="btn btn-sm btn-warning">
-                                            <i class="bi bi-key-fill"></i>
-                                            Cambiar contraseña
-                                        </button>
-                                    </a>-->
                                 </td>
                             </tr>
                         @endforeach

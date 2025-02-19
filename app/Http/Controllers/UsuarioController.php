@@ -11,7 +11,7 @@ class UsuarioController extends Controller
 {
     public function editContrasenia(Request $request)
     {
-        $idUsuario=$request->id_usuario;
+        $idUsuario=$request->input("IdUsuario");
         $usuario=Usuario::find($idUsuario);
         $response=view("cambiar_contrasenia",compact("usuario"));
         return $response;
